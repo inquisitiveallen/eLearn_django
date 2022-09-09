@@ -1,0 +1,30 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    {% if student %}
+        <div>&nbsp; &nbsp;<span>First Name - {{ student.first_name }} </span> </div>
+        <div>&nbsp; &nbsp;<span>Last Name - {{ student.last_name }} </span> </div>
+        {% if orders %}
+            <h2> Courses Ordered</h2>
+            {% for order in orders %}
+                <div>&nbsp; &nbsp;<span>Name - {{ order.course.name }} </span> </div>
+                <div>&nbsp; &nbsp;<span>Price - {{ order.course.price }} </span> </div>
+                <br>
+            {% endfor %}
+        {% endif %}
+
+        {% if topics %}
+            <h2> Interested Topics</h2>
+            {% for topic in topics %}
+                <div>&nbsp; &nbsp;<span>Name - {{ topic.name }} </span> </div>
+                <div>&nbsp; &nbsp;<span>Category - {{ topic.category }} </span> </div>
+                <br>
+            {% endfor %}
+        {% endif %}
+
+    {% else %}
+        <strong> You are not a registered student!!</strong>
+    {% endif %}
+
+
+{% endblock %}

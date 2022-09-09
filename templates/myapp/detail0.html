@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details Page</title>
+</head>
+<body>
+    <p><b>Topic Name: </b></p>
+    <p>{{ topic_name }}</p>
+    <p><b>Category of the topic: </b></p>
+    <p>{{ topic_category }}</p>
+
+    {% if courses %}
+        <p><b>List of courses of the topic: </b></p>
+        <ol>
+            {% for course in courses %}
+                <li>{{ course.name }}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available topics!</strong>
+    {% endif %}
+
+    <p><a href="{% url 'myapp:index' %}">To Main Page</a></p>
+</body>
+</html>

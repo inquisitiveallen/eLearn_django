@@ -1,0 +1,22 @@
+.hbar1 {
+ display: inline;
+ margin: 15px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bolder !important;
+}
+
+body{
+    background-color: lightblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding-left: 10px;
+    font-family: 'Trebuchet MS', sans-serif !important;
+
+}

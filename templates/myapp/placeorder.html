@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}About Page!{% endblock %}
+{% block body_block %}
+
+    {% if courlist %}
+        <p><b>List of available courses are: </b></p>
+        <ol>
+            {% for course in courlist %}
+                <li><p>{{ course.name }} : {{ course.price }}</p></li>
+
+            {% endfor %}
+        </ol>
+    {% endif %}
+
+    <form action = "" method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

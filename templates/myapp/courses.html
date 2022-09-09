@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Courses Page!{% endblock %}
+{% block body_block %}
+
+    {% if courlist %}
+        <p><b>List of available courses are: </b></p>
+        <ol class="list-group">
+            {% for course in courlist %}
+                <li><a href="{% url 'myapp:course_detail' course.id %}" class="list-group-item">{{ course.name }}</a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available courses!</strong>
+    {% endif %}
+
+    <!--<p><a href="{% url 'myapp:index' %}">To Main Page</a></p>-->
+
+    <li class="hbar1"><a href = "{% url 'myapp:placeorder' %}">Click here to place a new order</a><br/></li>
+
+{% endblock %}
+

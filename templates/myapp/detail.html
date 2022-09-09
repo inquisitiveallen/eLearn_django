@@ -1,0 +1,24 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Detail Page!{% endblock %}
+{% block body_block %}
+
+    <p><b>Topic Name: </b></p>
+    <p>{{ topic_name }}</p>
+    <p><b>Category of the topic: </b></p>
+    <p>{{ topic_category }}</p>
+
+    {% if courses %}
+        <p><b>List of courses of the topic: </b></p>
+        <ol class="list-group">
+            {% for course in courses %}
+                <li class="list-group-item">{{ course.name }}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available topics!</strong>
+    {% endif %}
+
+    <p><a href="{% url 'myapp:index' %}">To Main Page</a></p>
+
+{% endblock %}

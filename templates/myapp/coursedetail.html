@@ -1,0 +1,19 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Course Detail Page!{% endblock %}
+{% block body_block %}
+    <p><b>Course Name: </b>{{ course_name.name }}</p>
+    <p><b>Number of interested people: </b>{{ course_name.interested }}</p>
+    <p><b>Price: </b>{{ course_name.price }}</p>
+    {% if not course_name.for_everyone %}
+        <p><b>The course <i>{{ course_name.name }}</i> is not for everyone </b></p>
+    {% endif %}
+
+    <form action = "" method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+    <!--<p><a href="/eLearnApp/">To Main Page (Hardcoded URL)</a></p>-->
+    <!--<p><a href="{% url 'myapp:index' %}">To Main Page (URL Namespacing)</a></p>-->
+{% endblock %}

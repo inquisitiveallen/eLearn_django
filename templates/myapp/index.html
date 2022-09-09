@@ -1,0 +1,34 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    {% if last_login %}
+        <p><b>Your Last Login: {{ last_login }}</b></p>
+    {% else %}
+        <p><b>Your Last Login was more than One Hour ago</b></p>
+    {% endif %}
+    {% if browserCLose %}
+        <p> Session Clear on Browser Close = True</p>
+    {% else %}
+        <p>Session Clear on Browser Close = False</p>
+    {% endif %}
+
+     {% if top_list %}
+        <h2>List of Topics</h2>
+        <ol class="list-group">
+            {% for topics in top_list %}
+                <li><a href="{% url 'myapp:detail' topics.id %}" class="list-group-item">{{ topics.name }}</a></li>
+            {% endfor %}
+        </ol>
+        <h2>List of Courses</h2>
+        <ol class="list-group">
+            {% for course in top_course %}
+                <li><a class="list-group-item">{{ course.name }}</a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available topics!</strong>
+    {% endif %}
+
+{#    <p><a href="{% url 'myapp:about' %}">About page</a></p>#}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+   {
+      "model":"auth.user",
+      "pk":30,
+      "fields":{
+         "password":"j",
+         "last_login":null,
+         "is_superuser":false,
+         "username":"m",
+         "first_name":"Mary",
+         "last_name":"Allen",
+         "email":"",
+         "is_staff":false,
+         "is_active":true,
+         "date_joined":"2022-06-01T01:37:13Z",
+         "groups":[
+            
+         ],
+         "user_permissions":[
+            
+         ]
+      }
+   }
